@@ -1,0 +1,38 @@
+---
+title: "SS4864ASS3"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{SS4864ASS3}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(SS4864ASS3)
+```
+There are three useful theories in this document including: 
+
+1.Riemann integration
+```{r}
+x <- rnorm(10000)
+hist(x,breaks = 30)
+
+```
+
+2.Trapezoid Rule
+```{r}
+
+```
+
+3.Simpson's Rule
+```{r}
+
+```
+
