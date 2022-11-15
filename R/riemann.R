@@ -8,8 +8,8 @@
 #' @export
 #'
 #' @examples
-#' > riemann(function(x){x^2}, c(1,2), 100)
-#' 2.34835
+#' riemann(function(x){x^2}, c(1,20), 100)
+#' 2704.353
 
 riemann <- function(f, range, n) {
   a <- range[1]

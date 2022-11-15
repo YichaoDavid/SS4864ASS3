@@ -23,7 +23,6 @@ There are three useful theories in this document including:
 ```{r}
 x <- rnorm(10000)
 hist(x,breaks = 30)
-
 ```
 
 2.Trapezoid Rule
