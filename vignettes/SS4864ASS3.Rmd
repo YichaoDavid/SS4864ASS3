@@ -30,6 +30,7 @@ n is the number of intervals for the Riemann approximation
 return a single value which is the approximation to the integral in one of the three ways above
 
 ```{r}
+#plot of my function with the target area shaded.
 library(tidyverse)
 a <- 1
 b <- 10
@@ -54,5 +55,30 @@ df %>%
     geom_polygon(fill = "blue", alpha = 0.4)
 
 ```
+```{r}
+# to compare the three methods
+library(tidyverse)
+n <- seq(1, 100, 1)
+l <- length(n)
+ri <- vector(length = l)
+tr <- vector(length = l)
+si <- vector(length = l)
+f <- function(x){x^2}
 
+for (i in 1:l) {
+    ri[i] <- riemann(f, c(1, 10), n[i])
+    tr[i] <- trapezoid(f, c(1, 10), n[i])
+    si[i] <- simpsons(f, c(1, 10), n[i])
+}
+
+df <- tibble(n, ri, tr, si)
+
+df %>%
+    ggplot(aes(x = n)) +
+    geom_line((aes(y = ri, colour = "reimann"))) +
+    geom_line((aes(y = tr, colour = "trapezoid"))) +
+    geom_line((aes(y = si, colour = "simpsons"))) +
+    ylab("integral")
+```
+From the plot, we can clearly see the difference between the three different methods to integrate including Riemann Integration, Trapezoid Rule, and Simpson's Rule.
 
