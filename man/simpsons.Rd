@@ -20,6 +20,6 @@ a single value which is the Simpsons approximation to the integral
 Simpson's Rule
 }
 \examples{
-> simpsons(function(x){1/x},c(1,2),500)
-0.6931472
+simpsons(function(x){x^2},c(1,20),500)
+2666.333
 }

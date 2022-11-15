@@ -20,6 +20,6 @@ a single value which is the Riemann approximation to the integral
 Riemann integration
 }
 \examples{
-> riemann(function(x){x^2}, c(1,2), 100)
-2.34835
+riemann(function(x){x^2}, c(1,20), 100)
+2704.353
 }

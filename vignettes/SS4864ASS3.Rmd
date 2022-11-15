@@ -30,6 +30,7 @@ n is the number of intervals for the Riemann approximation
 return a single value which is the approximation to the integral in one of the three ways above
 
 ```{r}
+library(tidyverse)
 a <- 1
 b <- 10
 n <- 1000

@@ -20,6 +20,6 @@ a single value which is the Trapezoid approximation to the integral
 Trapezoid Rule
 }
 \examples{
-> trapezoid(function(x){log(x)},c(1,2),200)
-0.3862933
+trapezoid(function(x){x^2},c(1,20),200)
+2666.362
 }
