@@ -20,18 +20,38 @@ library(SS4864ASS3)
 There are three useful theories in this document including: 
 
 1.Riemann integration
-```{r}
-x <- rnorm(10000)
-hist(x,breaks = 30)
-```
-
 2.Trapezoid Rule
-```{r}
-
-```
-
 3.Simpson's Rule
+
+How to run the package:
+f is a function with a single argument x
+range is a vector specifying the lower and upper end points of the range of integration (a and b)
+n is the number of intervals for the Riemann approximation
+return a single value which is the approximation to the integral in one of the three ways above
+
 ```{r}
+a <- 1
+b <- 10
+n <- 1000
+dx <- (b - a)/n
+
+f <- function(x){x^2}
+
+xlist <- c()
+ylist <- c()
+for (x in seq(a, b-dx, dx)){
+    xlist <- c(xlist, c(x, x, x + dx, x + dx))
+    ylist <- c(ylist, c(0,f(x), f(x+dx), 0))
+}
+
+df <- tibble(x = xlist, y = ylist)
+
+df %>%
+    ggplot(aes(x = x, y = y)) +
+    geom_line(data = tibble(x = seq(a, b, .001), 
+                            y = f(x)), colour = "blue", lwd = 1) +
+    geom_polygon(fill = "blue", alpha = 0.4)
 
 ```
+
 
